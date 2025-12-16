@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple hello page for the Pantheon Bot Playground." />
+    <title>Hello | Pantheon Bot Playground</title>
+
+    <style>
+      :root {
+        color-scheme: light;
+
+        --bg-0: #0b1220;
+        --bg-1: #0f1b33;
+        --card: rgba(255, 255, 255, 0.08);
+        --card-border: rgba(255, 255, 255, 0.14);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --accent: #61dafb;
+        --shadow: rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        color: var(--text);
+        background:
+          radial-gradient(1200px 700px at 15% 10%, #233c70 0%, transparent 60%),
+          radial-gradient(900px 600px at 85% 30%, #1c5a66 0%, transparent 55%),
+          linear-gradient(180deg, var(--bg-0), var(--bg-1));
+      }
+
+      .shell {
+        width: min(860px, calc(100% - 2.5rem));
+        padding: 1.5rem;
+        border: 1px solid var(--card-border);
+        border-radius: 18px;
+        background: var(--card);
+        box-shadow: 0 20px 60px var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      header {
+        display: flex;
+        gap: 0.75rem;
+        align-items: baseline;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        letter-spacing: -0.02em;
+      }
+
+      header .tagline {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding-top: 1.25rem;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .callout {
+        display: grid;
+        gap: 0.4rem;
+        padding: 1rem 1rem;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .callout strong {
+        color: var(--text);
+        font-weight: 650;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+        outline: none;
+      }
+
+      footer {
+        padding-top: 1.1rem;
+        margin-top: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.06);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" role="document">
+      <header>
+        <h1>Hello</h1>
+        <p class="tagline">Pantheon Bot Playground</p>
+      </header>
+
+      <main>
+        <div class="callout">
+          <strong>Welcome!</strong>
+          <p>
+            This is a simple, standalone HTML page added for
+            <a href="https://github.com/Mini256/pantheon-bot-playground">Mini256/pantheon-bot-playground</a>.
+          </p>
+        </div>
+
+        <p>
+          The goal of this page is to provide a clean “hello” landing experience with a professional
+          look, responsive layout, and accessible defaults.
+        </p>
+      </main>
+
+      <footer>
+        <span class="pill">HTML5 • Responsive • Lightweight</span>
+        <span>Made for Issue #1</span>
+      </footer>
+    </div>
+  </body>
+</html>
