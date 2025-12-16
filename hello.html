@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello — Pantheon Bot Playground</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0b1020;
+        --panel: #121a33;
+        --text: #e8eefc;
+        --muted: #a8b5dc;
+        --border: rgba(168, 181, 220, 0.25);
+        --accent: #7aa7ff;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f6f7fb;
+          --panel: #ffffff;
+          --text: #0c1224;
+          --muted: #4e5a7a;
+          --border: rgba(78, 90, 122, 0.25);
+          --accent: #1f5eff;
+        }
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: radial-gradient(1200px 700px at 20% 0%, rgba(122, 167, 255, 0.25), transparent 55%),
+          radial-gradient(1200px 700px at 80% 0%, rgba(0, 195, 255, 0.18), transparent 55%), var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 56px 20px;
+      }
+
+      header {
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.6rem);
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+
+      .subtitle {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+        max-width: 70ch;
+      }
+
+      main {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 22px 22px 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .card h2 {
+        font-size: 1rem;
+        margin: 0 0 8px;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      footer {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Hello, Pantheon Bot Playground</h1>
+        <p class="subtitle">
+          This repository is a small sandbox for experimenting with automation and bot workflows. This page is
+          intentionally static: it’s easy to view, easy to host, and easy to iterate on.
+        </p>
+      </header>
+
+      <main>
+        <section aria-label="Overview">
+          <p>
+            If you’re here from Issue #1, welcome — this is the first simple, user-visible artifact in the project.
+          </p>
+        </section>
+
+        <div class="grid" role="list">
+          <section class="card" role="listitem" aria-label="What this is">
+            <h2>What this is</h2>
+            <p>A single, self-contained HTML page with lightweight styling and accessible markup.</p>
+          </section>
+
+          <section class="card" role="listitem" aria-label="What’s next">
+            <h2>What’s next</h2>
+            <ul>
+              <li>Add a tiny static site structure (optional).</li>
+              <li>Wire up CI to validate HTML changes.</li>
+              <li>Iterate on content as the playground evolves.</li>
+            </ul>
+          </section>
+
+          <section class="card" role="listitem" aria-label="Links">
+            <h2>Links</h2>
+            <p>
+              Source:
+              <a href="https://github.com/Mini256/pantheon-bot-playground">github.com/Mini256/pantheon-bot-playground</a>
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <p>Built for clarity: minimal dependencies, maximal portability.</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
