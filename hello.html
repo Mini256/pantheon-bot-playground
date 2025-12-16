@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A friendly hello page for the Pantheon Bot Playground repository."
+    />
+    <title>Pantheon Bot Playground — Hello</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0b1020;
+        --surface: rgba(255, 255, 255, 0.06);
+        --surface-border: rgba(255, 255, 255, 0.12);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --accent: #7c5cff;
+        --accent-2: #21d4fd;
+        --shadow: rgba(0, 0, 0, 0.35);
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f8fb;
+          --surface: rgba(0, 0, 0, 0.04);
+          --surface-border: rgba(0, 0, 0, 0.1);
+          --text: rgba(0, 0, 0, 0.88);
+          --muted: rgba(0, 0, 0, 0.62);
+          --shadow: rgba(0, 0, 0, 0.12);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(
+            1000px 600px at 15% 15%,
+            rgba(124, 92, 255, 0.35),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 550px at 85% 20%,
+            rgba(33, 212, 253, 0.28),
+            transparent 55%
+          ),
+          linear-gradient(180deg, var(--bg), var(--bg));
+        display: grid;
+        place-items: center;
+        padding: 48px 20px;
+      }
+
+      .shell {
+        width: min(920px, 100%);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 650;
+        letter-spacing: 0.2px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 18px 70px var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 14px 0 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr;
+        margin-top: 18px;
+      }
+
+      @media (min-width: 720px) {
+        .grid {
+          grid-template-columns: 1.15fr 0.85fr;
+        }
+      }
+
+      .panel {
+        border-radius: 14px;
+        border: 1px solid var(--surface-border);
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 18px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: rgba(255, 255, 255, 0.98);
+        font-weight: 650;
+        text-decoration: none;
+        letter-spacing: 0.2px;
+        box-shadow: 0 14px 40px rgba(124, 92, 255, 0.25);
+      }
+
+      a.button:focus-visible {
+        outline: 3px solid rgba(33, 212, 253, 0.55);
+        outline-offset: 2px;
+      }
+
+      footer {
+        margin-top: 14px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 0.95em;
+        padding: 0.15em 0.35em;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (prefers-color-scheme: light) {
+        code {
+          background: rgba(0, 0, 0, 0.05);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="brand" aria-label="Project name">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Pantheon Bot Playground</span>
+        </div>
+        <span aria-label="Page label">Hello</span>
+      </header>
+
+      <main class="card" role="main">
+        <h1>Welcome.</h1>
+        <p>
+          This is a small, friendly landing page for the
+          <code>Mini256/pantheon-bot-playground</code> repository.
+        </p>
+
+        <div class="grid" aria-label="Overview">
+          <section class="panel" aria-label="What is this?">
+            <strong>What is this?</strong>
+            <p>
+              A lightweight HTML5 page you can open locally or serve as a static
+              asset. It’s intentionally dependency-free and keeps the markup
+              semantic.
+            </p>
+          </section>
+          <section class="panel" aria-label="Next steps">
+            <strong>Next steps</strong>
+            <ul>
+              <li>Customize the messaging and branding.</li>
+              <li>Link to docs, demos, or a status page.</li>
+              <li>Drop this behind a simple static host if needed.</li>
+            </ul>
+          </section>
+        </div>
+
+        <a class="button" href="README.md">View repository README</a>
+
+        <footer>
+          Tip: open <code>hello.html</code> in your browser to preview.
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
