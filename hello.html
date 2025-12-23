@@ -3,13 +3,204 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple hello page for pantheon-bot-playground." />
+    <meta name="color-scheme" content="light dark" />
     <title>Hello</title>
+    <style>
+      :root {
+        --bg: #f7f8fb;
+        --surface: rgba(255, 255, 255, 0.92);
+        --surface-soft: rgba(255, 255, 255, 0.72);
+        --text: #111827;
+        --muted: #4b5563;
+        --border: rgba(17, 24, 39, 0.12);
+        --shadow: 0 16px 40px rgba(17, 24, 39, 0.12);
+        --accent: #2563eb;
+        --ring: rgba(37, 99, 235, 0.35);
+
+        color-scheme: light dark;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1220;
+          --surface: rgba(17, 24, 39, 0.72);
+          --surface-soft: rgba(17, 24, 39, 0.55);
+          --text: #e5e7eb;
+          --muted: #a1a1aa;
+          --border: rgba(255, 255, 255, 0.14);
+          --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          --accent: #60a5fa;
+          --ring: rgba(96, 165, 250, 0.4);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--text);
+        background:
+          radial-gradient(1200px 600px at 20% 0%, rgba(37, 99, 235, 0.14), transparent 60%),
+          radial-gradient(900px 500px at 90% 10%, rgba(16, 185, 129, 0.12), transparent 55%),
+          var(--bg);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        text-underline-offset: 0.18em;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--ring);
+        outline-offset: 2px;
+        border-radius: 6px;
+      }
+
+      .container {
+        width: min(64rem, 100% - 2.5rem);
+        margin: 0 auto;
+        padding: clamp(1.5rem, 4vw, 3rem) 0;
+      }
+
+      header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .brand {
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.6rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface-soft);
+        font-size: 0.875rem;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      main {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        overflow: clip;
+      }
+
+      .content {
+        padding: clamp(1.25rem, 3.5vw, 2.25rem);
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+        max-width: 60ch;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+      }
+
+      .meta {
+        display: grid;
+        gap: 0.5rem;
+        padding: 1rem clamp(1.25rem, 3.5vw, 2.25rem);
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .meta span {
+        display: inline-flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      footer {
+        margin-top: 1.25rem;
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <h1>Hello</h1>
-      <p>Welcome to pantheon-bot-playground.</p>
-    </main>
+    <div class="container">
+      <header>
+        <div class="brand">pantheon-bot-playground</div>
+        <div class="badge" aria-label="Environment badge">Hello page</div>
+      </header>
+
+      <main>
+        <section class="content" aria-label="Greeting">
+          <h1>Hello</h1>
+          <p>Welcome to pantheon-bot-playground. This is a clean, responsive page with light and dark mode support.</p>
+          <p>
+            View the repository
+            <a href="https://github.com/Mini256/pantheon-bot-playground">on GitHub</a>.
+          </p>
+        </section>
+
+        <div class="divider" role="presentation"></div>
+
+        <section class="meta" aria-label="Details">
+          <span><strong>Built with:</strong> vanilla HTML + CSS</span>
+          <span><strong>Theme:</strong> follows your system setting</span>
+        </section>
+      </main>
+
+      <footer>
+        <span>Tip: toggle your OS theme to see dark mode.</span>
+      </footer>
+    </div>
   </body>
 </html>
-
