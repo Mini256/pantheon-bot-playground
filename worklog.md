@@ -37,3 +37,4 @@
 ## Results
 
 - Tests: `python3 -m unittest discover -s tests` (PASS)
+- Repo hygiene: added `.gitignore` to keep Python bytecode caches out of git.
